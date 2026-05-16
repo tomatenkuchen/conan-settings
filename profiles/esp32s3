@@ -1,0 +1,15 @@
+[settings]
+arch=xtensalx7
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu23
+compiler.libcxx=libstdc++11
+compiler.version=15.2
+os=baremetal
+
+[buildenv]
+CFLAGS= -fdiagnostics-color=always -ffunction-sections -fdata-sections -freorder-blocks -mno-target-align -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -fexceptions -mlongcalls -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -mdisable-hardware-atomics
+CXXFLAGS= -fdiagnostics-color=always -ffunction-sections -fdata-sections -freorder-blocks -mno-target-align -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -fexceptions -fuse-cxa-atexit -mlongcalls -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -mdisable-hardware-atomics -fno-rtti
+
+[tool_requires]
+xtensa-esp32s3-elf-gcc/15.2.0

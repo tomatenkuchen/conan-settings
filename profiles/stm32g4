@@ -1,0 +1,17 @@
+[settings]
+arch=armv7
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu23
+compiler.libcxx=libstdc++11
+compiler.version=14
+os=baremetal
+
+[tool_requires]
+arm-none-eabi-gcc/15.2.1
+
+[buildenv]
+ASMFLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb --specs=nosys.specs
+CFLAGS   = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb --specs=nosys.specs -fdata-sections -ffunction-sections 
+CXXFLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb --specs=nosys.specs -fdata-sections -ffunction-sections -fno-threadsafe-statics 
+LDFLAGS  = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--gc-sections -static --specs=nano.specs  -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group -Wl,--print-memory-usage
